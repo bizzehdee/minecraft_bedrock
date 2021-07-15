@@ -18,7 +18,7 @@ This Docker image will download the Bedrock Server app and set it up, along with
         -v "bedrock-worlds:/bedrock-server/worlds"\
         -p 19132:19132/udp\
         --restart=unless-stopped\
-        toasterlint/minecraft_bedrock:latest
+        bizzehdee/minecraft_bedrock:latest
     ```
 3. Prepare the config files
     1. Either start the server once and stop it
