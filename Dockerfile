@@ -9,7 +9,7 @@ RUN apt-get update && \
     rm -rf /var/lib/apt/lists/*
 
 # Download and extract the bedrock server
-RUN if [ "$VERSION" = "latest" ] ; then \
+RUN if [ "$VERSION" = "latest" ] || [ "$VERSION" = "" ] ; then \
         LATEST_VERSION=$( \
             curl -v --silent -H "user-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/88.0.4324.182 Safari/537.36" -L https://www.minecraft.net/en-us/download/server/bedrock/ 2>&1 | \
             grep -o 'https://minecraft.azureedge.net/bin-linux/[^"]*' | \
